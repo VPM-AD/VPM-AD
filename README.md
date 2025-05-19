@@ -3,6 +3,12 @@
   <img src="overview.jpg" alt="Project Overview" style="max-width:100%; height:auto;" />
 </p>
 
+<p align="center">
+  <video src="case_video.mp4" controls style="max-width:100%; height:auto;">
+    Your browser does not support the video tag.
+  </video>
+</p>
+
 ## 📋 Project Status
 
 - [x] **Stage 1 (NIPS submission)**
