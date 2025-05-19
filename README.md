@@ -2,7 +2,7 @@
 <p align="center">
   <img src="overview.jpg" alt="Project Overview" style="max-width:100%; height:auto;" />
 </p>
-</p>
+
 ## 📋 Project Status
 
 - [x] **Stage 1 (NIPS submission)**
@@ -96,7 +96,9 @@ python vpm_ad/Planning_Module/planModel.py --eval
 ### 7. 📈 Visualization and Qualitative Analysis
 
 Use the following scripts to generate visualizations and qualitative examples:
-
+<p align="center">
+  <img src="result_case1.jpg" alt="Project Case" style="max-width:100%; height:auto;" />
+</p>
 ---
 
 ---
