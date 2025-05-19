@@ -1,5 +1,7 @@
 # 🚗 VPM-AD: Integrating LVLM with Planning Module for End-to-End Autonomous Driving
-
+<p align="center">
+  <img src="overview.jpg" alt="Project Overview" width="80%" />
+</p>
 ## 📋 Project Status
 
 - [x] **Stage 1 (NIPS submission)**
