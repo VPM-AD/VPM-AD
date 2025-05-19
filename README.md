@@ -105,5 +105,5 @@ Use the following scripts to generate visualizations and qualitative examples:
 This project is released under the MIT License. See the [LICENSE](LICENSE) file for details.
 ## 🙏 Acknowledgments
 
-We would like to thank the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) ,[Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL)project for its comprehensive training and execution framework, which greatly inspired and supported parts of our implementation.
+We would like to thank the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) ,[Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL)projects, which greatly inspired and supported parts of our implementation.
 
