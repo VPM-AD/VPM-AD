@@ -97,7 +97,7 @@ python vpm_ad/Planning_Module/planModel.py --eval
 
 Use the following scripts to generate visualizations and qualitative examples:
 <p align="center">
-  <img src="result_case1.jpg" alt="Project Case" style="max-width:100%; height:auto;" />
+  <img src="result_case1.png" alt="Project Case" style="max-width:100%; height:auto;" />
 </p>
 ---
 
