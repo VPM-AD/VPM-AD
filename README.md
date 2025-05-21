@@ -18,55 +18,79 @@
 
 ## 🚀 Quick Start Guide
 
-Follow these steps to get the project up and running:
+Follow these steps to set up and run the project smoothly:
+
+---
 
 ### 1. ⚙️ Environment Setup
 
+Set up your Python environment:
+
 ```bash
+# Create a new conda environment
 conda create -n vpm_ad python=3.10
 conda activate vpm_ad
+
+# Navigate to the project directory
+cd VPM-AD
+
+# Set PYTHONPATH
+export PYTHONPATH=/path_to_your_project/VPM-AD
+
+# Install project dependencies
+pip install -e "".[torch,metrics]" --no-build-isolation
 pip install -r requirements.txt
+
+# (Optional) Install Flash-Attention for performance boost
+# Follow instructions at: https://github.com/Dao-AILab/flash-attention
 ```
 
 ---
 
 ### 2. 📂 Stage 1: Data Preparation
 
-Run the following commands sequentially to generate training data:
+Generate training data by running the following commands sequentially:
 
 ```bash
-python vpm_ad/data_generation/VQA_fromGT.py
-python vpm_ad/data_generation/VQA_fromLVLM.py
-python vpm_ad/utils/merge_json.py
+conda activate vpm_ad
+export PYTHONPATH=/path_to_your_project/VPM-AD
+
+python3 vpm_tools/VLM_nuData_convert_useGT.py
+python3 vpm_tools/VLM_nuData_convert_useQwen.py
+python3 vpm_tools/merge_VLM_json.py
 ```
+
+> **Note:** To enhance efficiency, data is generated in slices and then merged to obtain the final dataset.
 
 ---
 
 ### 3. 🏁 Stage 1: Training
 
-**Prepare training data:**
+**Move the prepared training data:**
 
 ```bash
 mv path/to/train_vqa_data.json data/
 ```
 
-**Single-GPU training:**
+**Single-GPU Training:**
 
 ```bash
 llamafactory-cli train examples/train_full/qwen2vl_full_sft.yaml
 ```
 
-**Multi-GPU distributed training:**
+**Multi-GPU Distributed Training:**
 
 ```bash
 FORCE_TORCHRUN=1 NNODES=2 NODE_RANK=0 MASTER_ADDR=192.168.0.1 MASTER_PORT=29500 llamafactory-cli train examples/train_lora/qwen2vl_full_sft.yaml
 ```
 
+> **Note:** Final checkpoints are saved in `outputs/qwen2_5_vl-full`.
+
 ---
 
 ### 4. 🚦 Stage 2: Data Preparation
 
-Execute these commands to prepare trajectory data:
+Prepare trajectory data by executing:
 
 ```bash
 python vpm_ad/data_generation/generateTrainTrajectory.py
@@ -77,7 +101,7 @@ python vpm_ad/utils/merge_json.py
 
 ### 5. 🎯 Stage 2: Training
 
-Use PyTorch distributed training:
+Train using PyTorch Distributed Training:
 
 ```bash
 torchrun --nproc_per_node=8 vpm_ad/Planning_Module/planModel.py \
@@ -91,7 +115,15 @@ torchrun --nproc_per_node=8 vpm_ad/Planning_Module/planModel.py \
 
 ### 6. 📊 Evaluation
 
-Evaluate model performance with:
+Evaluate model performance:
+
+- **Stage 1 (LVLM-meta-action):**
+
+```bash
+python3 vpm_tools/evaluation/evalMetaAction.py
+```
+
+- **Stage 2 (VPM-AD-trajectory):**
 
 ```bash
 python vpm_ad/Planning_Module/planModel.py --eval
