@@ -129,7 +129,7 @@ python vpm_ad/planning_module/planModel.py --eval
 
 ### 7. 📈 Visualization and Qualitative Analysis
 > The visualization code will be released in the future.
-Use the following scripts to generate visualizations and qualitative examples:
+Use scripts to generate visualizations and qualitative examples:
 <p align="center">
   <img src="result_case1.png" alt="Project Case" style="max-width:100%; height:auto;" />
 </p>
