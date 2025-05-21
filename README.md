@@ -131,7 +131,7 @@ Use the following scripts to generate visualizations and qualitative examples:
 <p align="center">
   <img src="result_case1.png" alt="Project Case" style="max-width:100%; height:auto;" />
 </p>
----
+
 ## 🙏 Acknowledgments
 
 We would like to thank the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) ,[Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL)projects, which greatly inspired and supported parts of our implementation.
