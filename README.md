@@ -90,7 +90,7 @@ Prepare trajectory data by executing:
 
 ```bash
 python vpm_ad/data_generation/generateTrainTrajectory.py
-python  vpm_ad/data_generation/merge_json.py
+python vpm_ad/data_generation/merge_json.py
 ```
 
 ---
