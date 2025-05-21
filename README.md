@@ -36,10 +36,8 @@ export PYTHONPATH=/path_to_your_project/VPM-AD
 pip install -e "".[torch,metrics]" --no-build-isolation
 pip install -r requirements.txt
 
-# (Optional) Install Flash-Attention for performance boost
-# Follow instructions at: https://github.com/Dao-AILab/flash-attention
 ```
-
+> **Optional (performance boost):** Install [Flash-Attention](https://github.com/Dao-AILab/flash-attention) by following the instructions in its repository.
 ---
 
 ### 2. 📂 Stage 1: Data Preparation
@@ -113,13 +111,13 @@ torchrun --nproc_per_node=8 vpm_ad/Planning_Module/planModel.py \
 
 Evaluate model performance:
 
-- **Stage 1 (LVLM-meta-action):**
+- **Stage 1:**
 
 ```bash
 python3 vpm_tools/evaluation/evalMetaAction.py
 ```
 
-- **Stage 2 (VPM-AD-trajectory):**
+- **Stage 2:**
 
 ```bash
 python vpm_ad/Planning_Module/planModel.py --eval
@@ -128,7 +126,7 @@ python vpm_ad/Planning_Module/planModel.py --eval
 ---
 
 ### 7. 📈 Visualization and Qualitative Analysis
-
+> The visualization code will be released in the future.
 Use the following scripts to generate visualizations and qualitative examples:
 <p align="center">
   <img src="result_case1.png" alt="Project Case" style="max-width:100%; height:auto;" />
