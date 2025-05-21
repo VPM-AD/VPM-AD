@@ -27,17 +27,12 @@ Follow these steps to set up and run the project smoothly:
 Set up your Python environment:
 
 ```bash
-# Create a new conda environment
+
 conda create -n vpm_ad python=3.10
 conda activate vpm_ad
 
-# Navigate to the project directory
 cd VPM-AD
-
-# Set PYTHONPATH
 export PYTHONPATH=/path_to_your_project/VPM-AD
-
-# Install project dependencies
 pip install -e "".[torch,metrics]" --no-build-isolation
 pip install -r requirements.txt
 
