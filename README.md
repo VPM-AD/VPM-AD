@@ -9,10 +9,12 @@
   </video>
 </p>
 
+---
+
 ## 📋 Project Status
 
 - [x] **Stage 1 (NIPS submission)**
-- [ ] **Stage 2 (Code and model release)**
+- [ ] **Stage 2 (Code and models release)**
 
 ---
 
