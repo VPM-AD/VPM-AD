@@ -11,10 +11,9 @@
 
 ---
 
-## 📋 Project Status
-
-- [x] **Stage 1 (NIPS submission)**
-- [ ] **Stage 2 (Code and models release)**
+> **📋 Project TODO**
+- ✅ TODO: NeurIPS submission
+- ⬜ TODO: Code and models release
 
 ---
 
