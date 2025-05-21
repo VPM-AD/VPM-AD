@@ -49,9 +49,9 @@ Generate training data by running the following commands sequentially:
 conda activate vpm_ad
 export PYTHONPATH=/path_to_your_project/VPM-AD
 
-python3 vpm_tools/VLM_nuData_convert_useGT.py
-python3 vpm_tools/VLM_nuData_convert_useQwen.py
-python3 vpm_tools/merge_VLM_json.py
+python3 vpm_ad/data_prepare/VLM_nuData_convert_useGT.py
+python3 vpm_ad/data_prepare/VLM_nuData_convert_useQwen.py
+python3 vpm_ad/data_prepare/merge_VLM_json.py
 ```
 
 > **Note:** To enhance efficiency, data is generated in slices and then merged to obtain the final dataset.
@@ -88,7 +88,7 @@ Prepare trajectory data by executing:
 
 ```bash
 python vpm_ad/data_generation/generateTrainTrajectory.py
-python vpm_ad/utils/merge_json.py
+python  vpm_ad/data_generation/merge_json.py
 ```
 
 ---
@@ -98,11 +98,11 @@ python vpm_ad/utils/merge_json.py
 Train using PyTorch Distributed Training:
 
 ```bash
-torchrun --nproc_per_node=8 vpm_ad/Planning_Module/planModel.py \
+torchrun --nproc_per_node=8 vpm_ad/planning_module/planModel.py \
     --batch_size=8 \
     --output_dir=./checkpoints \
-    --train_data=/path/to/train_data.json \
-    --val_data=/path/to/val_data.json
+    --train_data=/path/to/plan_train_data.json \
+    --val_data=/path/to/plan_val_data.json
 ```
 
 ---
@@ -114,13 +114,13 @@ Evaluate model performance:
 - **Stage 1:**
 
 ```bash
-python3 vpm_tools/evaluation/evalMetaAction.py
+python3 vpm_ad/evaluation/evalMetaAction.py
 ```
 
 - **Stage 2:**
 
 ```bash
-python vpm_ad/Planning_Module/planModel.py --eval
+python vpm_ad/planning_module/planModel.py --eval
 ```
 
 ---
@@ -132,10 +132,14 @@ Use the following scripts to generate visualizations and qualitative examples:
   <img src="result_case1.png" alt="Project Case" style="max-width:100%; height:auto;" />
 </p>
 
+---
+
 ## 🙏 Acknowledgments
 
-We would like to thank the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) ,[Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL)projects, which greatly inspired and supported parts of our implementation.
+We would like to thank the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory), [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL)projects, which greatly inspired and supported parts of our implementation.
+
 ---
+
 ## 📄 License
 
 This project is released under the MIT License. See the [LICENSE](LICENSE) file for details.
