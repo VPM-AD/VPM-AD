@@ -48,7 +48,7 @@ pip install -r requirements.txt
 ---
 
 ### 2. 📂 Stage 1: Data Preparation
-> **Prerequisites:** Please ensure you have prepared the nuScenes dataset and downloaded the Qwen2.5-VL weights, for example placing them at `/data/Qwen2.5-VL-7B-Instruct` (Huggingface URL: https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct).
+> **Prerequisites:** Please ensure you have prepared [nuScenes](https://www.nuscenes.org/) and download [Qwen2.5-VL 7B](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) and [72B](https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct) checkpoints to any path.
 
 Generate training data by running the following commands sequentially:
 
